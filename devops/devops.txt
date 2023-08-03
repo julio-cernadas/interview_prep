@@ -1,0 +1,40 @@
+DevOps --------------------------------------------------------------
+- Agile -> Focuses on timeliness
+- DevOps ->
+ 	~ Continous Integration - typically developers work on features or stories within a sprint and commit their changes to a repo. Once code is comitted, their work is integrated and a build is performed to check for any errors or vulnerabilites.
+	~ Continous Delivery - this is layer that revolves around getting the changes made by developers to the end-users as soon as possible. During this process, builds go through QA, Staging, and then to a PROD system.
+ 	~ Continous Testing
+ 	~ Continuous Monitoring
+	~ Provides immediate feedback
+
+- Needs for DevOps ->
+	~ Reduce time between fixes/faster delivery
+	~ Increase the frequency of development
+	~ Prepare the crash rate of new product releases
+	~ Lower the crash rate of new product releases
+
+- Tools ->
+	~ Jira - Planning
+	~ Jenkins - Continous Integration
+	~ Docker -
+ 	~ Puppet - configuration management used to automate system administration
+
+- DevOps Phases ->
+	~ Plan
+	~ Code
+	~ Developer
+	~ Test
+	~ Deploy
+	~ Function
+
+- How to approach a project ->
+	~ Assessment of the current system (as-is) process. Identify any areas of improvement and provide a roadmap for the implementation
+	~ A PoC can be done to showcase and end to end preview of a pipeline. Get feedback and finally begin to implement the system.
+	~ Asure the projects follows all the continous principles.
+
+- KPIs
+ 	~ Appliation performance
+ 	~ Availability
+	~ Usage/Traffic
+	~ Error rates
+	~ Deployment time

@@ -1,0 +1,39 @@
+Composition:
+•	What if data needs to be sent through a stream, but the data can be of any type?
+o	Most stream APIs specify its type so you can’t really change that.
+o	But what if you created your own class (or your own type) that supports dynamic typing that you can package together?
+o	For example:
+	Let’s say we’re sending instances of News.
+	The news class can have a dynamic variable that can take up any type and the stream can be of type News, meaning that although the stream doesn’t technically support dynamic types, it still is in this case because of how News is implemented.
+
+Data Structures APIs:
+•	Set interface:
+o	Hash Set
+	Stores variables in any order and lookup is very quick.
+o	Tree Set
+	Stores variables in their natural ordering (a, b, c, d...).
+o	Linked Hash Set
+	Stores data in the order in which it was inserted.
+o	Difference between makes it easier to implement some things depending on if ordering or insertion order matters or not.
+•	If Java doesn’t have a data structure that store data the way you need it to store, you can create your own data structure.
+
+Static vs Dynamic Types:
+•	Add info
+
+Inheritance:
+•	Typing is useful for inheritance too.
+o	Let’s say you have a class Person and class Student that extends Person.
+o	You can do this: Person Josh = new Student();
+o	Let’s say student and person both have the method printInfo():
+	If I do josh.printInfo(), Java will call the method belonging to its dynamic type, not its static type, so it would use the Student class’s printInfo() and not the Person class’s.
+
+Overloading:
+•	Is when you have a method with the same name as another method in the same scope, but more parameters.
+•	Overloading allows you to have control over what happens depending on how many arguments you receive.
+
+Overriding:
+•	Is when a child class (a class that extends another class) has the same method name and all the same parameters, but different code.
+•	Overriding is useful because different classes may need to do different things with the same method.
+•	Look at the printInfo() method mentioned above. A Person’s info would be different than that of a Student’s info, but nonetheless, they should both have a printInfo() method because they do both have info.
+
+

@@ -1,0 +1,66 @@
+•	What is SQL – Structured Query Language?
+o	Used for database management
+o	Interacting and creating databases
+o	Data Definition Language:
+	CREATE
+	DROP
+	ALTER
+o	Data Manipulation Language:
+	Insert data or rows
+	Delete
+	Retrieve
+	Update
+•	What is a database?
+o	A structure form of data which is stored in computer in an organized manner and can be accessed and changed in various ways.
+o	Collection of schemas, tables, queries, and views.
+•	Schemas?
+o	Used to create the desired tables.
+•	Difference between ‘BETWEEN’ and ‘IN’ operators?
+o	BETWEEN used to fetch rows based on range
+o	IN used to check for value contained in specific sets, ex – (20, 21, 22, 23)
+•	SQL query to find names of employees that start with ‘A’?
+o	LIKE can be used to fetch filtered data by searching for particular pattern
+•	Difference between CHAR and VARCHAR datatype in SQL?
+o	Both are used for characters but varchar is used for character strings of variable length whereas char is used for character strings of fixed length.
+•	Types of case manipulation functions available in SQL?
+o	LOWER – returns lowercase string
+o	UPPER – returns uppercase string
+o	INITCAP – returns string with only first letter in uppercase
+•	Difference between Primary Key and Unique Constraints?
+o	Primary key cannot have a NULL value
+	There is only one primary key in a table
+	Gives a clustered index or auto-incremented
+o	Unique constraints can have NULL values
+	There can be multiple unique constrains
+•	What is a foreign key?
+o	A field that points to the primary key of another table, creating links between two separate tables.
+•	Explain normalization?
+o	Process of organizing data in a database to avoid data redundancy & anomalies.
+o	First Normal Form 1NF
+	Each column should only have a single value
+o	2NF
+	Table must be in 1NF
+	A table is not in 2NF if there are two primary keys and some columns are dependent on a certain primary key but have no real link between the other primary key. (No non-prime attributes) Think of a customer orders tables with PKs cust_id and order_id, some columns may relate to only one primary key but not the other.
+	If this is true, then create two separate tables with primary keys and columns that have logical link between each other.
+	We now have every column dependent on the primary key.
+o	3NF
+	Table must be in 2NF
+	Think relationships among the columns! To be in 3NF a table must contain only columns that are non-transitively dependent on the primary key. Transitive meaning a relationship is the same in the middle as it is across the whole. Now think of an employee details table with PK emp_id, emp_name, emp_zip, emp_state, emp_city, emp_district. Most of the columns relate to emp_zip, so thereby you should create a table specifically for emp_zip and then one with emp_id, emp_name, emp_zip.
+•	What is Concurrency?
+o	The ability of multiple users to accessing data at the same time, as simultaneous operations increase so does the database concurrency.
+•	What is Join?
+o	A Join statement is used to combine data or rows from two or more tables based on a common field between them.
+	INNER JOIN – will create the result by combining all rows from both the tables where the condition is satisfied
+	LEFT JOIN – returns all the rows of the table on the left side of the join and matching rows for the table on the right side of join. Rows for which there is no matching row on the right side will contain NULL.
+	RIGHT JOIN – vice versa.
+	FULL JOIN – creates the result-set by combining result of both LEFT JOIN and RIGHT JOIN.
+•	What does UNION vs UNION ALL do?
+o	Merges the contents of two compatible tables.
+o	UNION will omit duplicate records whereas UNION ALL will include duplicates.
+•	What is are nested queries?
+o	A query written inside a query. The result of inner query is used in execution of outer query.
+•	What is a view?
+o	Views are created by selecting fields from an existing table in the database.
+
+
+

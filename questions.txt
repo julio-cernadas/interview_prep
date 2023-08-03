@@ -1,0 +1,26 @@
+o log notation
+Big O Notation
+	When discussing Big O notation, log always mean log base 2, 〖Log〗_2.
+So, if you search for an element via a simple or brutal search of a list of 8 numbers, you would have to check 8 numbers -> O(n). But for a binary search it would be O(〖Log〗_n). So, log 8 == 3, because 2^3 == 8. For a list of 1024 elements, it would log 1024 = 10, because 2^10 == 1024.
+
+
+
+How Map works Internally?
+Implement an algorithm in code on paper to sort list of integers. Be efficient.
+How get HashCode() works?
+Differentiate between mutable and immutable objects, Create an immutable class?
+Brief about Spring?
+Explain MVC design Pattern?
+Implement stack and queue.
+Write one array sort function.
+Implement one hash function.
+How is https more secure than http
+Probability question.
+Asked about collection types in your specific coding
+Describe the difference between agile vs waterfall
+Asked about hash tables and their function
+When to use double vs. integer?
+Have you used a database and what type of database?
+
+What date structure would you use to store when there are millions of data and you want it to be search efficient?
+- Hash map - we specify a key and a value linked to the key. The key is then hashed, and it is used as the index at which the value is stored in the table.
