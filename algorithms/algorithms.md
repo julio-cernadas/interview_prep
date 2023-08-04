@@ -1,30 +1,17 @@
 # Algorithms
-1. Logarithm (Complexity Analysis)
-2. Graph Traversals (BFS & DFS)
-3. Binary Search
-4. Sliding Window
-5. Recursion
-6. 2 Algorithms (Inverting a binary tree & Reverse a Linked List)
-7. Suffix Trees
-8. Heaps
-9. Dynamic Programming
-10. Sorting Algorithms (Quick & Merge)
-
-
-
 ## Problem Solving
 
 ------
 
 ### Seven Steps
 
-1. Listen for clues, you'll receive vital details 
-2. Draw an example: large and generic (avoid special cases)
-3. Try brute force
-4. Then optimize
-5. Walk through algo, before you code
-6. Code
-7. Verification
+1. Listen for clues, you'll hear big details from interviewer
+2. Confirm your understanding, provide i/o examples
+3. Describe your approach - data structure type, algorithm type
+4. Walk through algo, before you code
+5. Write your code
+6. Verification
+7. Optimization
 
 ### Tips & Tricks
 
@@ -71,9 +58,9 @@ In other words it provides a way to analyze the efficiency of algorithms as the 
     - O(2^n + n^2) = O(2^n)
     - O(k + n^2) = O(k + n^2)
 
-### O(1)  Constant Time
+### O(1) Constant Time
 
-Describes an algorithm that will always **execute in the same time** (or space) regardless of the size of the input data set.
+An algorithm that will always **execute in the same time** (or space) regardless of the size of the input data set.
 
 ```python
 def returns_null(lst):
@@ -95,11 +82,11 @@ bool iterateThenReturn(IList<string> elements, string value) {
 
 ### O(n k) Linear Time V2
 
-This is where we have a single loop and then a nested loop that is limited to the range of the underlying iteration element.
+There is single loop iteration and then a nested loop that is limited to the range of the underlying iteration element.
 
 ### O(n^2) Quadratic Time 
 
-Operations are directly proportional to the square of the size of the input data set. This is common with algos that involve nested iterations over the data set. The power number is proportional to the number of nested iterations, so this can eventually become Cubic complexity too. This includes some less efficient ordering alogirthms such as: bubble sort, selection sort, and insertion sort. 
+Operations are directly proportional to the square of the size of the input data set. This is common with algos that involve nested iterations over the data set. The power number is proportional to the number of nested iterations, so this can eventually become Cubic complexity too. This includes some less efficient ordering algorithms such as: bubble sort, selection sort, and insertion sort.
 
 ```java
 bool ContainsDuplicates(IList<string> elements) {
@@ -152,7 +139,7 @@ Space Complexity - recursions takes up a lot of memory
 
 ### **Base & Recursive Case**
 
-When you write a recursive function, you have to tell it when to stop recursing. That’s why *every recursive function has two parts: the base case, and the recursive case.* The recursive case is when the function calls itself. The base case is when the function doesn’t call itself again ... so it doesn’t go into an infinite loop.
+When you write a recursive function, you have to tell it when to stop recursing. That’s why *every recursive function has two parts: the base case, and the recursive case.* The base case is when the function doesn’t call itself again... so it doesn’t go into an infinite loop. The recursive case is when the function calls itself. 
 
 ### The Call Stack
 
@@ -174,15 +161,7 @@ def countdown(i):
 - Divide and conquer. Can you solve for parts separately?
 - Fibonacci
 
-```python
-def fibonacci_recursive(n):
-    if n <= 1:
-        return n
-    else:
-        return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
-```
 
-### 
 
 ## Sorting
 
@@ -195,28 +174,17 @@ def fibonacci_recursive(n):
 
 
 
-### Bubble Sort 
+### Bubble Sort
 
-#### Complexity 
+#### Complexity
 
-O(n^2)
+Time: O(n^2)
 
 #### Explanation
 
 Walk through array, comparing pairs. If out of order, swap. Repeat until array is sorted.
 
-```python
-arr = [9, 5, 7, 4, 2, 8, 1, 10, 6, 3]
-
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-1):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-```
-
-<img src="./assets/bubble_sort.png" style="zoom:70%;" />
+<img src="./assets/bubble_sort.png" style="zoom: 50%;" />
 
 
 
@@ -224,47 +192,13 @@ def bubble_sort(arr):
 
 #### Complexity 
 
-O(n log n)
+Time: O(n log n)
 
 #### Explanation
 
 This applys the divide and conquer approach. The sort begins by breaking the dataset into individual pieces and sorting the pieces. It then merges the pieces in a manner that ensures that it has sorted the merged piece. The sorting and merging continues until the entire dataset is again a single piece. 
 
 Keep halving an array until it consists of only one element, then take the smallest element between two adjacent subarrays and repeat until all the elements are taken, resulting in a sorted subarray, the process is repeated until all elements are sorted.
-
-```python
-# Time Complexity - O(n log n)
-data = [9, 5, 7, 4, 2, 8, 1, 10, 6, 3]
-
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
-
-    middle = len(arr) // 2
-    left_half = merge_sort(arr[:middle])
-    right_half = merge_sort(arr[middle:])
-
-    return merge(left_half, right_half)
-
-def merge(left, right):
-    merged = []
-    left_idx, right_idx = 0, 0
-
-    while left_idx < len(left) and right_idx < len(right):
-        if left[left_idx] < right[right_idx]:
-            merged.append(left[left_idx])
-            left_idx += 1
-        else:
-            merged.append(right[right_idx])
-            right_idx += 1
-
-    merged.extend(left[left_idx:])
-    merged.extend(right[right_idx:])
-    return merged
-
-
-mergeSort(data)
-```
 
 <img src="./assets/merge_sort.png" style="zoom:20%;" />
 
@@ -280,42 +214,17 @@ Worst-case time complexity of O(n^2)
 
 #### Explanation
 
-Considered one of the fastest methods of sorting data. Start with the left most element as the pivot point. We then compare each next element with the pivot point. When we find the smaller element, we move it to the left; moving is performed by swapping the element with the first element after the pivot point, and then swapping the pivot point with the element after it. We then take all the points to the left and right and call the same quicksort function.
+Divide and conquer approach, it finds the element called the Pivot which divides the array into two halves in such a way that elements in the left half are smaller than pivot and elements in the right are greater than the pivot.
 
-The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.
+The pivot is usually the last element of the list
 
-```python
-data = [9, 5, 7, 4, 2, 8, 1, 10, 6, 3]
+We then recursively perform three steps:
 
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-
-    return quick_sort(left) + middle + quick_sort(right)
-
-quickSort(data, 0, len(data)-1)
-```
+- Bring the pivot to the middle index
+- Quick sort the left part
+- Quick sort the right part
 
 <img src="./assets/quick_sort.png" style="zoom:70%;" />
-
-
-
-## Traversal
-
-------
-
-### Binary Tree Traversal
-
-Pre-Order
-
-Post-Order
-
-In-Order
 
 
 
@@ -324,6 +233,12 @@ In-Order
 ------
 
 ### Binary Search 
+
+#### Complexity 
+
+Time: O(log n)
+
+Space: O(1)
 
 #### Explanation
 
@@ -334,27 +249,6 @@ Its input is a sorted list of elements, this is required otherwise won't work. W
 - If the guess is correct your return, otherwise:
     - If guess is larger than target item, you make the high = mid - 1, this is to exclude the already processed high point
     - If guess is smaller than target item, you make the low = mid + 1, this is to exclude the already processed high point
-
-```python
-def binary_search(lst,item):
-    low = 0
-    high = len(lst) - 1
-    while low <= high:
-        mid = (low + high) / 2
-        guess = lst[mid]
-        if guess == item:
-            return mid
-        if guess > item:
-            high = mid - 1
-        else:
-            low = mid + 1
-    return None
-
-my_list = [1,3,5,6,9]
-
-print(binary_search(my_list,6))
-print(binary_search(my_list,-1))
-```
 
 <img src="./assets/binary_search.png" style="zoom:60%;" />
 
@@ -367,15 +261,21 @@ print(binary_search(my_list,-1))
 
 ### Depth First Search 
 
+#### Complexity 
+
+Time: O(V + E), where V = vertices and E = edges
+
+Space: O(H), where H = maximum height
+
 #### **Explanation**
 
-Search each node in graph as deep as you can fore visiting its neighbors
+Can be applied to directed and undirected graphs.
 
-Use a hash map or flag to mark visited nodes.
+Depth refers to vertical before horizontal. Search each node in graph as deep as you can before visiting its neighbors.
 
-Challenges - you might go really deep, when there is actually a really obvious one
+Use a hash map to mark visited nodes. Challenges - you might go really deep, when there is actually a really obvious one.
 
-<img src="./assets/dfs.png" style="zoom:70%;" />
+<img src="./assets/dfs.png" style="zoom:60%;" />
 
 #### **Application**
 
@@ -385,15 +285,47 @@ Challenges - you might go really deep, when there is actually a really obvious o
 
 ### Breadth First Search 
 
+#### Complexity 
+
+Time: O(V + E), where V = vertices and E = edges
+
+Space: O(V)
+
 #### **Explanation**
 
-Finds the shortest path, leverages a queue to keep track of nodes.
+Can be applied to directed and undirected graphs.
+
+Breadth means broad or wide, meaning the algo will progress horizontally (same level) before we proceed vertically. 
+
+It finds the shortest distance between two things, if there is one. And leverages a queue to keep track of nodes.
 
 <img src="./assets/bfs.png" style="zoom:70%;" />
 
 #### **Application**
 
 - Relationships between items
+- Fewest moves to an element
+
+
+
+### Dijkstra Algorithm
+
+#### **Explanation**
+
+Applied for shortest path in weighted graphs. It has four steps:
+
+1. Find the cheapest node. This is the node you can get to in the least amount of time.
+2. Check whether there’s a cheaper path to the neighbors of this node. If so, update their costs.
+3. Repeat until you’ve done this for every node in the graph.
+4. Calculate the final path. 
+
+Breadth means broad or wide, meaning the algo will progress horizontally (same level) before we proceed vertically. 
+
+Dijkstra’s algorithm works when all the weights are positive. If you have negative weights, use the Bellman-Ford algorithm.
+
+#### **Application**
+
+- Shortest path between nodes for a weighted graph.
 
 
 
@@ -401,13 +333,68 @@ Finds the shortest path, leverages a queue to keep track of nodes.
 
 ------
 
+### NP Complete Problems
+
+NP-complete problems have no known fast solution. If you have an NP-complete problem, your best bet is to use an approximation algorithm. Greedy algorithms are easy to write and fast to run, so they make good approximation algorithms.
+
 ### **Explanation**
+
+A greedy algorithm is simple: at each step, pick the locally optimal solution, and in the end you’re left with the globally optimal solution.
 
 We make a decision based on what we know right now, and don't care about what happens down the road.
 
+The algorithm is fast and efficient with time complexity of O(n log n) or O(n). Therefore applied in solving large-scale problems.
+
+The search for optimal solution is done without repetition – the algorithm runs once.
+
 Best seen in contrast to dynamic programming.
 
-### **Application**
+<img src="./assets/greedy.png" style="zoom:30%;" />
+
+
+
+## Dynamic Programming
+
+------
+
+### **Explanation**
+
+Dynamic programming is useful when you’re trying to optimize something given a constraint.
+
+You can use dynamic programming when the problem can be broken into discrete subproblems, and they don’t depend on each other.
+
+Some general tips follow:
+
+- Every dynamic-programming solution involves a grid.
+- The values in the cells are usually what you’re trying to optimize. 
+- Each cell is a subproblem, so think about how you can divide your problem into subproblems. 
+
+Memoization is the process of storing sub-problem results in a top-down approach. So we use hash tables (dictionaries) in DP.
+
+
+
+## Other Algos
+
+------
+
+### Top K Elements
+
+- Use sorting algorithm
+
+
+
+### Sliding Window
 
 Tbd
 
+
+
+### Combination Sum Backtracking
+
+Tbd
+
+
+
+### Inverting a Binary Tree 
+
+Tbd

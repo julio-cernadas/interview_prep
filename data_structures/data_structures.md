@@ -6,7 +6,7 @@
 
 ### Inserts
 
-With lists, it’s as easy as changing what the previous element points to.
+With linked lists, it’s as easy as changing what the previous element points to.
 
 But for arrays, you have to shift all the rest of the elements down.
 
@@ -14,7 +14,7 @@ But for arrays, you have to shift all the rest of the elements down.
 
 ### Deletes
 
-Again, lists are better, because you just need to change what the previous element points to. 
+Again, linked lists are better, because you just need to change what the previous element points to. 
 
 With arrays, everything needs to be moved up when you delete an element.
 
@@ -22,9 +22,7 @@ With arrays, everything needs to be moved up when you delete an element.
 
 ### Traversing
 
-**Traversing** means to search (visit) each vertex (node) in a specific order, the process of visiting a vertex can include both reading and updating it. As you traverse a graph, an unvisited vertex is undiscovered, yet after a visit the vertex becomes discovered.
-
-The order of the searches determines the kind of search performed, algorithms are used in this sense. 
+**Traversing** means to search (visit) each vertex (node) in a specific order, the process of visiting a vertex can include both reading and updating it. As you traverse a graph, an unvisited vertex is undiscovered, yet after a visit the vertex becomes discovered. The order of the searches determines the kind of search performed, algorithms are used in this sense. 
 
 
 
@@ -42,7 +40,7 @@ In python, a simple list can be used for all 4 types of linear structures. So ju
 
 - Insert at end
 - Index math. Two pointers, swapping
-- Working with subarrays and matrices
+- Subarrays and matrices
 - Hash tables
 
 ```      python
@@ -75,12 +73,21 @@ matrix[col][row]
     - Fast operations on the ends, adding items at either end is 0(1) time.
     - You don’t need to know the size in advance. The more elements you add, the bigger the chain gets.
 
+```python
+class ListNode:
+    def __init__(self, val, next=None):
+        self.val = val
+        self.next = next
+```
+
+
+
 #### Array vs Linked List
 
 - Size of arrays is fixed, Linked Lists are dynamic.
 - Inserting and deleting a new element in an array is expensive. Whereas both insertion and deletion can easily be done in Linked Lists (no movements of nodes required).
-- Random access is not allowed in linked lists, you need to go through all the nodes that come before the node you need.
-- Extra memory space for a pointer is required with each element of the linked list.
+- Reading is faster with Araray. Random access is not allowed in linked lists, you need to go through all the nodes that come before the node you need.
+- Array uses less memory. Extra memory space for a pointer is required with each element of the linked list.
   
 
 
@@ -95,7 +102,6 @@ matrix[col][row]
     - Push (inserts element at the top)
     - Pop (returns the top element, after removing it from the stack)
     - Peek (returns value of the first item without removing the element)
-    - Swap (swap the two top most elements)
     - isEmpty (returns true if empty)
     
 
@@ -128,7 +134,7 @@ class Stack:
 - Is balanced. 
 - Reverse an array: you push a given word to stack, letter-by-letter, then pop letters from the stack into an array or list.
 - Undo Mechanism in Text Editors: keeping all text changes in a stack.
-- Backtracking: at each point you store on choices, then backtracking means popping a next choice from the stack.
+- Backtracking: at each point you store choices, then backtracking means popping a previous choice from the stack.
 
 ​    
 
@@ -138,21 +144,18 @@ class Stack:
 
 - Think of a cafeteria line!
 - Queue is a linear structure which follows the order FIFO to access elements.
-- In a stack, we remove the most recent item (last in last out), but in a queue, we remove the least recently item (first in first out).
 - Operations include:
     - En-Queue (insert item into the back of the queue)
     - De-Queue (remove item from the front of the queue)
     - Front (returns first element)
     - Rear (returns last element)
+    - isEmpty (returns true if empty)
     
 
 ```python
 class Queue:
     def __init__(self):
         self.items = []
-
-    def is_empty(self):
-        return len(self.items) == 0
 
     def enqueue(self, item):
         self.items.append(item)
@@ -161,12 +164,12 @@ class Queue:
         if not self.is_empty():
             return self.items.pop(0)
 
-    def peek(self):
+    def front(self):
         if not self.is_empty():
             return self.items[0]
-
-    def size(self):
-        return len(self.items)
+      
+    def is_empty(self):
+        return len(self.items) == 0
 ```
 
 #### Application
@@ -187,23 +190,19 @@ class Queue:
 
 #### Explanation
 
-* Patterns & Concepts:
-    * How do we handle collisions?
-    * Hash codes
-    * Keys
-* Operations:
-    * Creation
-    * Access
-    * Contains
-    * Delete
+Also known as dictionary in Python.
 
-- Application:
-    - Lookups
-    - Counting how many times
+First understand a hash function, which is where you input a string and get back a number (hash). Combining hash function with arrays gives you a hash map (or also called hash table).
+
+Hash tables have really fast search, insert, and delete.
+
+Collisions are bad. You need a hash function that minimizes collisions.
 
 #### Application
 
-- Tbd
+- Use hash maps for caching.
+- Lookups by key
+- Counting how many times, great for catching duplicates
 
 
 
@@ -211,20 +210,21 @@ class Queue:
 
 #### Explanation
 
-A Binary Tree is where each node has 0 to 2 children, thus being binary (either no children or 2 children).
+A Binary Tree is where each node has 0 to 2 children, thus being binary (either no children or 2 children). 
 
-A Binary Search Tree is where, for each node, all items on the left are less than its value and all items on the right are greater. 
+A Binary Search Tree is where, for each node, all children on the left are lesser and on the right are greater.
 
 Thus this makes BST an easily understood balanced approach to storing the keys. BST tends to work best in situations in which you spend more time searching and less time building the tree. 
 
 ```python
 class Node:
-    def __init__(self, val, left=None, right=None):
-        self.key = key
+    def __init__(self, key, left=None, right=None):
         self.left = left
         self.right = right
-
+        self.val = key
 ```
+
+
 
 <img src="./assets/bst.png" style="zoom:75%;" />
 
@@ -239,14 +239,25 @@ class Node:
 
 #### Explanation
 
-Tbd
+An ordered tree data structure that is used to store a dynamic set or associative array where the keys are usually strings. Unlike a binary search tree, no node in the tree stores the key associated with that node; instead, its position in the tree defines the key with which it is associated.
 
 <img src="./assets/tries.png" style="zoom:75%;" />
+
+```python
+class TrieNode:
+    def __init__(self, char: str):
+        self.char = char
+        self.is_end = False
+        self.counter = 0
+        self.children = {}
+```
 
 #### Application
 
 - String problems, is this a valid word or prefix
 - Be comfortable with recursion
+- Spell check
+- Autocomplete suggestions
 
 
 
@@ -254,9 +265,11 @@ Tbd
 
 #### Explanation
 
-Two types max and min heap. It is a great system for being able to continously extract the minimum or maximum value. 
+A special type of binary tree. There are two types max and min heap.
 
-Implemented as an array approach, which is more efficient and takes up less memory.
+It is a great system for being able to continously extract the minimum or maximum value. 
+
+Implement as an array approach, which is more efficient and takes up less memory.
 
 <img src="./assets/heap.png" style="zoom:50%;" />
 
@@ -272,14 +285,12 @@ Implemented as an array approach, which is more efficient and takes up less memo
 
 #### Explanation
 
-Directed and undirected graphs
+There are two types of graphs: 
 
-```python
-class Node:
-  	pass
-  
+- Directed - the relationship is only one way
+- Undirected - the relationship is both ways
 
-```
+Graphs are made up of nodes (vertices) and edges. A node can be directly connected to many other nodes. Those nodes are called its *neighbors*. Graphs are a way to model how different things are connected to one another.
 
 <img src="./assets/graphs_1.png" style="zoom:50%;" />
 

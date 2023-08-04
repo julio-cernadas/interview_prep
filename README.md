@@ -11,13 +11,7 @@
 - Try to solve problems within 30 mins
 - If you can't solve it, look at the logic of solution
 - Try it again for 30 mins, if you still can't solve then see code solution
+- After successful submission take away a general pattern / lesson
 
 ## 3. Target State:
 - Be able to solve medium level difficulty within 20 minutes
-
-
-Process:
-1) solving the questions conceptually
-2) writing down the concepts into the code
-3) fine to look at the solution but need to understand what was the actual logic behind it
-4) after successful submission take away a general pattern

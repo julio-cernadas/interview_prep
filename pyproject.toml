@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "interview_prep"
+version = "0.1.0"
+description = "preparation material for interviews"
+authors = ["Julio Cernadas <jcernadas@entilex.com>"]
+readme = "README.md"
+
+
+[tool.black]
+exclude = '''
+/(
+    | .git
+    | .idea
+    | .run
+    | .venv
+    | dist
+)/
+'''
+line-length = 120
+
+
+[tool.isort]
+profile = "black"
+line_length = 120
+skip_gitignore = true
+skip_glob = [".venv", "dist"]
