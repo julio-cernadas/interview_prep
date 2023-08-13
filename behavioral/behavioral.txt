@@ -1,4 +1,17 @@
 
+Mature consumer-facing companies
+e.gv Google: wants candidates who understand emerging technologies from the user's perspective.
+Such companies have a deeper technology stack, much of which is developed in-house. They have the resources and the time to train a new hire.
+
+
+
+Behavioral:
+- how did you handle conflict in the work space
+- have you ever had a project with huge deadlines that you couldn't complete with your team?
+- have you ever had an engineering issue that caused a regression in your code base?
+-
+
+
 Describe you experience leading a team, include one challenge you faced as a leader?
 - answer with STAR
 
