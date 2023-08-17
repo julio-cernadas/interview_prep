@@ -1,3 +1,5 @@
+# CHAPTER 6: PERMUTATIONS & COMBINATIONS
+
 # EXPLANATION:
 # What is the base case?
 # The first base case is a k argument of 0, meaning that a 0-combination is requested, which is always an array of the
@@ -16,9 +18,9 @@
 def get_combos(chars, k):
     # BASE CASE
     if k == 0:
-        return ['']
+        return [""]
     # BASE CASE
-    elif chars == '':
+    elif chars == "":
         return []
 
     # RECURSIVE CASE
@@ -33,4 +35,4 @@ def get_combos(chars, k):
     return combinations
 
 
-print(get_combos('ABC', 2))
+print(get_combos("ABC", 2))

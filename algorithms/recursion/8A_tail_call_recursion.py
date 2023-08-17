@@ -1,3 +1,6 @@
+# CHAPTER 8: TAIL CALL RECURSION
+
+
 def factorial(number, accum=1):
     # BASE CASE
     if number == 1:

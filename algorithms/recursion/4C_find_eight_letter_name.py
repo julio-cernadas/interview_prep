@@ -1,3 +1,5 @@
+# CHAPTER 4: BACKTRACKING AND TREE TRAVERSAL ALGORITHMS
+
 # EXPLANATION:
 # Instead of printing out the data in each node as we traverse them,
 # we can use a depth-first search to find specific data in a tree data structure
@@ -14,42 +16,43 @@
 root = {
     "name": "Alice",
     "children": [
-        {"name": "Bob", "children": [{"name": "Darya", "children": []}]},
+        {
+            "name": "Bob",
+            "children": [
+                {"name": "Darya", "children": []},
+            ],
+        },
         {
             "name": "Caroline",
             "children": [
                 {
                     "name": "Eve",
-                    "children": [{"name": "Gonzalo", "children": []}, {"name": "Hadassah", "children": []}],
+                    "children": [
+                        {"name": "Gonzaloe", "children": []},
+                        {"name": "Hadassah", "children": []},
+                    ],
                 },
                 {"name": "Fred", "children": []},
             ],
         },
+        {"name": "Jeff", "children": [{"name": "Jane", "children": []}]},
     ],
 }
 
 
-def find_eight_letter_name(node):
-    # Preorder depth-first search:
-    # BASE CASE
-    if len(node["name"]) == 8:
-        return node["name"]
+def find_eight_letter_name(node_tree):
+    def dfs(node):
+        # BASE CASE
+        if len(node["name"]) == 8:
+            result.append(node["name"])
 
-    # RECURSIVE CASE
-    if len(node["children"]) > 0:
+        # RECURSIVE CASE
         for child in node["children"]:
-            return_value = find_eight_letter_name(child)
-            if return_value is not None:
-                return return_value
+            dfs(child)
 
-    # Postorder depth-first search:
-    # BASE CASE
-    # if len(node['name']) == 8:
-    #     return node['name']
-
-    # BASE CASE
-    # Value was not found or there are no children.
-    return None
+    result = []
+    dfs(node_tree)
+    return result
 
 
 print(find_eight_letter_name(root))

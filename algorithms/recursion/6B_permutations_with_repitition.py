@@ -1,3 +1,5 @@
+# CHAPTER 6: PERMUTATIONS & COMBINATIONS
+
 # EXPLANATION:
 
 # What is the base case?

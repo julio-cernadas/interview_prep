@@ -1,3 +1,5 @@
+# CHAPTER 4: BACKTRACKING AND TREE TRAVERSAL ALGORITHMS
+
 # EXPLANATION:
 # The nodes are always traversed in the same order for both...
 # We go down the child nodes first (called a depth-first search) as opposed to visiting the nodes in each
@@ -8,12 +10,35 @@
 root = {
     "data": "A",
     "children": [
-        {"data": "B", "children": [{"data": "D", "children": []}]},
+        {
+            "data": "B",
+            "children": [
+                {
+                    "data": "D",
+                    "children": [],
+                },
+            ],
+        },
         {
             "data": "C",
             "children": [
-                {"data": "E", "children": [{"data": "G", "children": []}, {"data": "H", "children": []}]},
-                {"data": "F", "children": []},
+                {
+                    "data": "E",
+                    "children": [
+                        {
+                            "data": "G",
+                            "children": [],
+                        },
+                        {
+                            "data": "H",
+                            "children": [],
+                        },
+                    ],
+                },
+                {
+                    "data": "F",
+                    "children": [],
+                },
             ],
         },
     ],

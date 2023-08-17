@@ -1,3 +1,5 @@
+# CHAPTER 5: DIVIDE AND CONQUER
+
 # EXPLANATION:
 # Since the associative property of addition means that adding:
 # 1 + 2 + 3 + 4 is the same as adding the sums of 1 + 2 and 3 + 4,

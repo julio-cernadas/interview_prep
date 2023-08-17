@@ -1,3 +1,5 @@
+# CHAPTER 2: RECURSION VS. ITERATION
+
 # EXPLANATION:
 # In this case the recursive approach is better since the iterative will run in O(n) but recursive will do O(log n)
 # Here we are leveraging the divide and conquer approach, specifically the properties of exponentations.
@@ -15,14 +17,11 @@ def exponent_by_recursion(a, n):
     if n == 1:
         return a
 
-    # RECURSIVE CASE (When n is even)
-    elif n % 2 == 0:
-        result = exponent_by_recursion(a, n // 2)
+    # RECURSIVE CASE
+    result = exponent_by_recursion(a, n // 2)
+    if n % 2 == 0:
         return result * result
-
-    # RECURSIVE CASE (When n is odd)
-    elif n % 2 == 1:
-        result = exponent_by_recursion(a, n // 2)
+    else:
         return result * result * a
 
 

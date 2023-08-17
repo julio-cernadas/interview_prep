@@ -1,4 +1,8 @@
+# CHAPTER 3: CLASSIC RECURSION ALGORITHMS
+
 # EXPLANATION:
+# We're using the head and tail approach here too, but splitting an extra layer ~ head - middle - tail...
+
 # What is the base case?
 # A zero or one-character string, which returns True because it is always a palindrome.
 
@@ -11,7 +15,7 @@
 
 def is_palindrome(the_string):
     # BASE CASE
-    if len(the_string) == 0 or len(the_string) == 1:
+    if len(the_string) <= 1:
         return True
 
     # RECURSIVE CASE

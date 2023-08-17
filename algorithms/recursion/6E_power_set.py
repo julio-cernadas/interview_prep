@@ -1,3 +1,5 @@
+# CHAPTER 6: PERMUTATIONS & COMBINATIONS
+
 # What is the base case?
 # If chars is the blank string (the empty set), the function returns an array with just a blank
 # string, since the empty set is the only subset of the empty set.
@@ -12,8 +14,8 @@
 
 def get_power_set(chars, indent=0):
     # BASE CASE
-    if chars == '':
-        return ['']
+    if chars == "":
+        return [""]
 
     # RECURSIVE CASE
     power_set = []
@@ -29,4 +31,4 @@ def get_power_set(chars, indent=0):
     return power_set
 
 
-print(get_power_set('ABC'))
+print(get_power_set("ABC"))

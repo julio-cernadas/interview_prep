@@ -167,7 +167,7 @@ The recursive case is when the function calls itself. The recursive case can be 
 
 Your computer uses a stack internally called the call stack. This is important when doing recursion.
 
-Every time a function call is made, a new frame object with information related to the call (such as local variables and a return address for the execution to move to when the function returns) is added to the call stack. The call stack, being a stack data structure, can be altered only by having data added to or removed from its “top.”
+Every time a function call is made, a new frame object with information related to the call (such as local variables and a return address for the execution to move to when the function returns) is added to the call stack. The call stack, being a stack data structure, can be altered only by having data added to or removed from its “top”.
 
 <img src="./assets/recursion.png" style="zoom:25%;" />
 
@@ -194,9 +194,71 @@ Other applications include:
 - Graph Traversal
 - Matrix Traversal
 
+
+
+### Styles
+
+Recursion (with returning value) - used to combine/aggregate results from sub-problems to solve the larger problem. 
+
+```python
+def max_depth(node):
+    if not node["children"]:
+        return 0
+
+    max_child_depth = 0
+    for child in node["children"]:
+        child_depth = max_depth(child)
+        if child_depth > max_child_depth:
+            max_child_depth = child_depth
+
+    return max_child_depth + 1
+```
+
+
+
+Recursion (without returning value) - used for their side effects rather than for their return value. 
+
+```python
+def combination_sum(nums, k):
+    def dfs(start, path):
+        if sum(path) == k:
+            result.append(path)
+            return
+          
+        for i in range(start, len(nums)):
+            curr_sum = sum(path) + nums[i]
+            if curr_sum > k:
+                continue
+
+            dfs(i + 1, path + [nums[i]])
+
+    result = []
+    dfs(0, [])
+    return result
+```
+
+
+
+Tree Recursion - using more than one recursive call in its body.
+
+```python
+def dfs(grid, row, col):
+  	off_grid = row < 0 or col < 0 or row >= len(grid) or col >= len(grid[0]) 
+    if off_grid or grid[row][col] != "1":
+        return
+
+    grid[row][col] = "#"
+    dfs(grid, row + 1, col)
+    dfs(grid, row - 1, col)
+    dfs(grid, row, col + 1)
+    dfs(grid, row, col - 1)
+```
+
+
+
 ### Strategies
 
-**Head & Tail Approach** - this technique splits the recursive function’s array argument into two parts: the *head* (the first element of the array) and the *tail* (a new array including everything after the first element).
+**Head & Tail Approach** - this technique splits the recursive function’s array argument into two parts: the *head* (the first element of the array) and the *tail* (a new array including everything after the first element). Because the tail array is one element smaller than the original array argument, we’ll eventually end up calling the recursive function and passing it an empty array, this becomes the base case.
 
 **Backtracking & Tree Traversal Algorithms** - a recursive function call is analogous to traversing to a child node in a tree, while returning from a recursive function call is analogous to backtracking to a previous parent node. Backtracking can be thought of as a selective tree / graph traversal method. At each node, we eliminate choices that are obviously not possible and proceed to recursively check only those that have potential. This way, at each depth of the tree, we mitigate the number of choices to consider in the future.
 
@@ -210,11 +272,17 @@ Other applications include:
 
 <img src="./assets/permutations_combo_calc.png" style="zoom:100%;" />
 
+**Memoization & Dynamic Programming** - a computer programming technique that involves breaking a large problem into overlapping subproblems. The key difference between this and recursion is that dynamic programming uses recursion with repeated recursive cases; these are the *overlapping* subproblems. *Memoization* is leveraged for DP and is defined as the technique of remembering the return values from a function for the specific arguments supplied to it (caching). Using recursion with memoization is called *top-down dynamic programming*. This is contrast to *bottom-up* approaches, which don’t use recursive functions but rather an iterative approach. 
+
+
+
 ### Warning
 
 Avoid **Tail Call Optimization** - never use it in your code. 
 
 To make use of tail call optimization, a function must use tail recursion. In tail recursion, the recursive function call is the last action of a recursive function. In code, this looks like a `return` statement returning the results of a recursive call.
+
+It is strongly advised to never use tail call approach, it's harder to debug and makes code less readable.
 
 
 
@@ -243,6 +311,32 @@ Walk through array, comparing pairs. If out of order, swap. Repeat until array i
 
 
 
+### Quick Sort 
+
+#### Complexity 
+
+Average-case time complexity of O(n log n)
+
+Worst-case time complexity of O(n^2)
+
+#### Explanation
+
+Divide and conquer approach, it finds the element called the Pivot which divides the array into two halves in such a way that elements in the left half are smaller than pivot and elements in the right are greater than the pivot.
+
+So basically, Quicksort divides an array into two partitions based on a pivot value. The algorithm then recursively partitions these two partitions, repeating the process until the partitions are the size of a single item. At this point, the partitions, and the items in them, are in sorted order.
+
+The pivot is usually the last element of the list
+
+We then recursively perform three steps:
+
+- Bring the pivot to the middle index
+- Quick sort the left part
+- Quick sort the right part
+
+<img src="./assets/quick_sort.png" style="zoom:70%;" />
+
+
+
 ### Merge Sort 
 
 #### Complexity 
@@ -256,30 +350,6 @@ This applys the divide and conquer approach. The sort begins by breaking the dat
 Keep halving an array until it consists of only one element, then take the smallest element between two adjacent subarrays and repeat until all the elements are taken, resulting in a sorted subarray, the process is repeated until all elements are sorted.
 
 <img src="./assets/merge_sort.png" style="zoom:20%;" />
-
-
-
-### Quick Sort 
-
-#### Complexity 
-
-Average-case time complexity of O(n log n)
-
-Worst-case time complexity of O(n^2)
-
-#### Explanation
-
-Divide and conquer approach, it finds the element called the Pivot which divides the array into two halves in such a way that elements in the left half are smaller than pivot and elements in the right are greater than the pivot.
-
-The pivot is usually the last element of the list
-
-We then recursively perform three steps:
-
-- Bring the pivot to the middle index
-- Quick sort the left part
-- Quick sort the right part
-
-<img src="./assets/quick_sort.png" style="zoom:70%;" />
 
 
 

@@ -1,4 +1,8 @@
+# CHAPTER 2: CLASSIC RECURSION ALGORITHMS
+
 # EXPLANATION:
+# We're using the head and tail approach here, splitting head - tail...
+
 # What is the base case?
 # A zero or one-character string.
 

@@ -1,3 +1,5 @@
+# CHAPTER 4: BACKTRACKING AND TREE TRAVERSAL ALGORITHMS
+
 # EXPLANATION:
 # Inorder traversal typically refers to the traversal of binary trees, although processing a node’s data after
 # traversing the first node and before traversing the last node would count as inorder traversal for trees of any size.
@@ -6,12 +8,35 @@
 root = {
     "data": "A",
     "children": [
-        {"data": "Z", "children": [{"data": "D", "children": []}]},
+        {
+            "data": "Z",
+            "children": [
+                {
+                    "data": "D",
+                    "children": [],
+                },
+            ],
+        },
         {
             "data": "C",
             "children": [
-                {"data": "E", "children": [{"data": "G", "children": []}, {"data": "H", "children": []}]},
-                {"data": "F", "children": []},
+                {
+                    "data": "E",
+                    "children": [
+                        {
+                            "data": "G",
+                            "children": [],
+                        },
+                        {
+                            "data": "H",
+                            "children": [],
+                        },
+                    ],
+                },
+                {
+                    "data": "F",
+                    "children": [],
+                },
             ],
         },
     ],
