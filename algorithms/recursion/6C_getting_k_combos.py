@@ -2,36 +2,36 @@
 
 # EXPLANATION:
 # What is the base case?
-# The first base case is a k argument of 0, meaning that a 0-combination is requested, which is always an array of the
-# blank string no matter what chars is. The second case occurs if chars is the blank string, which is an empty array
-# since no possible combinations can be made from a blank string.
+# The base case in the backtrack function is when the length of the current_combination reaches the desired length k.
+# At this point, the function adds the current combination to the combinations list and returns,
+# effectively terminating the recursion.
 
 # What argument is passed to the recursive function call?
-# For the first recursive call, the tail of chars and k - 1 are passed. For the second recursive call,
-# the tail of chars and k are passed.
+# Two arguments are passed to the recursive function call:
+# start: This argument indicates the index from which the function should start considering characters
+# for the next combination. It helps to avoid generating duplicate combinations.
+# current_combination: This argument represents the current state of the combination being constructed. During each
+# recursive call, characters from the string are added to the current_combination to build up the combination.
 
 # How does this argument become closer to the base case?
-# Since the recursive calls decrement k and remove the heads from the chars arguments, eventually the k argument
-# decrements to 0 or the chars argument becomes the blank string.
+# In each recursive call, the start index is incremented by 1. This helps to ensure that each character in the string
+# is considered at least once for the current position in the combination. As the recursion progresses, characters
+# from the string are added to the current_combination, and the start index moves forward. This process continues
+# until the length of the current_combination reaches the base case length of k. At this point, the recursion stops,
+# and the current combination is added to the combinations list.
 
 
-def get_combos(chars, k):
-    # BASE CASE
-    if k == 0:
-        return [""]
-    # BASE CASE
-    elif chars == "":
-        return []
+def get_combos(string, k):
+    def backtrack(start, current_combination):
+        if len(current_combination) == k:
+            combinations.append(current_combination)
+            return
 
-    # RECURSIVE CASE
+        for i in range(start, len(string)):
+            backtrack(i + 1, current_combination + string[i])
+
     combinations = []
-    head = chars[:1]
-    tail = chars[1:]
-    tail_combos = get_combos(tail, k - 1)
-    for tailCombo in tail_combos:
-        combinations.append(head + tailCombo)
-
-    combinations.extend(get_combos(tail, k))
+    backtrack(0, "")
     return combinations
 
 

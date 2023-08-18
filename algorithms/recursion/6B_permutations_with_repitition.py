@@ -3,33 +3,33 @@
 # EXPLANATION:
 
 # What is the base case?
-# A perm_length argument of 0, meaning a permutation zero characters long,
-# signals that the prefix argument now contains the complete permutation and so prefix should be returned in an array.
+# The base case in the backtrack function is when the length of the current_permutation reaches the desired length k.
+# At this point, the function adds the current permutation to the permutations list and returns,
+# effectively terminating the recursion.
 
 # What argument is passed to the recursive function call?
-# The chars string of the characters to get permutations of, a perm_length argument that begins as the length of chars,
-# and a prefix argument that begins as the blank string. Recursive calls decrement the perm_length argument while
-# appending a character from chars to the prefix argument.
+# The argument passed to the recursive function call is the current_permutation. This argument represents the current
+# state of the permutation being constructed. During each recursive call, a character from the given string is added
+# to the current_permutation to build up the permutation.
 
 # How does this argument become closer to the base case?
-# Eventually, the perm_length argument decrements to 0.
+# In each recursive call, the current_permutation is extended by adding a character from the string.
+# This action brings the permutation one step closer to the desired length k. As the recursive calls progress,
+# the length of the current_permutation gradually increases until it reaches the base case length of k.
+# Once the base case is reached, the recursion stops, and the current permutation is added to the permutations list.
 
 
-def get_perms_with_rep(chars, perm_length=None, prefix=""):
-    if perm_length is None:
-        perm_length = len(chars)
+def get_perms_with_rep(string, k):
+    def backtrack(current_permutation):
+        if len(current_permutation) == k:
+            permutations.append(current_permutation)
+            return
+        for char in string:
+            backtrack(current_permutation + char)
 
-    # BASE CASE
-    if perm_length == 0:
-        return [prefix]
-
-    # RECURSIVE CASE
-    results = []
-    for char in chars:
-        new_prefix = prefix + char
-        results.extend(get_perms_with_rep(chars, perm_length - 1, new_prefix))
-
-    return results
+    permutations = []
+    backtrack("")
+    return permutations
 
 
-print(get_perms_with_rep("JPB123", 4))
+print(get_perms_with_rep("JPB123", 2))

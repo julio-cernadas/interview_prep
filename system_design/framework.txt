@@ -1,0 +1,122 @@
+Notes:
+- Gather functional requirements:
+    * who are the users
+    * what type of features
+
+- Gather non-functional requirements:
+    * focus on scale and performance
+    * highly available, highly scalable, optimize for reads, etc
+
+- Back Envelope Calculations:
+    * MAU - monthly active users
+    * DAU - daily active users
+    * RPS - requests per second (there's roughly 100,000 seconds in day)
+    * Storage - Terrabytes, Petabytes
+
+- Make it interactive:
+    * Check for feedback of the interviewer before jumping into details
+    * Ask what they'd like to see first: high-level design, API design, data model
+
+- High level design:
+    * Get the end to end design down first, don't go into details yet
+    * Top down approach, but stay focused on functional and non-functional requirements
+        ~ APIs -> functional
+        ~ Backend Systems -> non-functinonal
+    * Start with Users -> APIs -> Backend Systems
+    * API design
+    * Data model design
+        ~ Data access patterns
+        ~ Read write ratio
+
+- Deep dive design:
+    * DB replication
+
+- Wrap Up:
+    * Summarize design
+
+Notes:
+- topics to review:
+    * Network Protocols - TCP/IP (Transmission Control Protocol/Internet Protocol), UDP (User Datagram Protocol), FTP (File Transfer Protocol), and SMTP (Simple Mail Transport Protocol).
+    * Proxies - provide an intermediary communication service between a client and an application server. Proxies are of two kinds – forward and backward.
+    * Latency - the amount of time taken for a message to get delivered. It is measured in milliseconds (ms).
+    * Throughput - the amount of data delivered successfully in a given period and is measured in bits per second (bps).
+    * Availability - the amount of time a system remains available. It is the ratio of Uptime and Uptime + Downtime.
+    * Load Balancing - used to distributing the load over multiple computing nodes.
+    * Leader Election & Consensus - Leader Election Algorithm decides how a leader-less node cluster will communicate to elect the optimal leader.
+    * Caching - is the process of storing copies of application data that is frequently used.
+    * Sharding - the process of scaling the system horizontally by breaking up the system into smaller fragments called Shards.
+    * Polling, SSE, Websockets
+    * Pull Model vs Push Model
+    * Queus & Pub-Sub (Message Brokers, Producers, Consumers)
+    * Change Data
+    * NoSQL - Cassandra
+    * Aggregation Services
+
+- APIs
+    * pagination
+    * GET/ POST/
+
+- two way connection needed? -> websockets
+
+- TCP vs UDP vs RPC:
+    * TCP is suitable for applications that require reliable data transmission and error correction,
+    such as web browsing, email, file transfer, and online gaming where data integrity is crucial.
+    * UDP is used in scenarios where speed and low latency are more important than data reliability,
+    such as streaming media, VoIP, online video gaming (for real-time updates), and DNS.
+    * RPC is commonly used in distributed systems to enable communication between different components or services.
+     It's useful for scenarios where code needs to be executed on a remote machine, such as in microservices architectures.
+
+Designs to practice, categorize these:
+- Facebook Newsfeed (Social Media)
+    * Newsfeed
+    * Status Search
+    * Live Commenting
+    * Proximity Server
+    * Type-ahead Suggestions
+
+- Instagram (Social Media)
+    * Reels
+
+- Twitter/Threads (Social Media)
+    * Timeline
+
+- Messenger (Consumer Chat App)
+
+- Uber (Ride Share)
+
+- Spotify (Music)
+    * Top N Songs
+
+- Youtube (Videos)
+
+- TinyURL (Url Shortener)
+
+- Pinterest (Photo Sharing)
+
+- Web Crawler
+
+- Ticketmaster (Events)
+
+- Glassdoor (Jobs)
+
+- Stack Overflow (Coding)
+
+- LeetCode (Coding)
+
+- AirBNB (Travel)
+
+- Slack (Business Chat)
+
+- Robinhood (Trading)
+
+- Mint (Financial Management)
+
+- Dropbox/Google Drive (Storage)
+
+- Google Maps (GPS)
+
+- Zoom (Video Conference)
+
+- Amazon (E-Commerce)
+
+- Yelp (Places)

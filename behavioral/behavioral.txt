@@ -1,3 +1,13 @@
+how would you roadmap a project?
+
+- gather requirements
+- dev/prod deployment
+- agile
+
+
+any questions?
+-
+
 
 Mature consumer-facing companies
 e.gv Google: wants candidates who understand emerging technologies from the user's perspective.
