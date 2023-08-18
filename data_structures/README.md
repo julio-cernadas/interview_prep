@@ -2,8 +2,6 @@
 
 ## Linear Structures
 
----
-
 ### Arrays
 
 #### Complexity
@@ -186,8 +184,6 @@ class Queue:
 
 
 ## Non-Linear Structures
-
----
 
 ### Hash Maps
 

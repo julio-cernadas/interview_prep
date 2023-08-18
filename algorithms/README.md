@@ -1,8 +1,6 @@
 # Algorithms
 ## Problem Solving
 
-------
-
 ### Seven Steps
 
 1. Listen for clues, you'll hear big details from interviewer
@@ -36,8 +34,6 @@
 
 
 ## Big O Notation
-
----
 
 ### What is it Big O
 
@@ -128,8 +124,6 @@ Complexity is a mix between logarithmic and linear complexity. It is typical of 
 
 
 ## Recursion
-
-------
 
 ### Complexity
 
@@ -288,8 +282,6 @@ It is strongly advised to never use tail call approach, it's harder to debug and
 
 ## Sorting
 
-------
-
 ### Typical Applications
 
 - Getting Nth biggest or smallest
@@ -354,8 +346,6 @@ Keep halving an array until it consists of only one element, then take the small
 
 
 ## Searching
-
-------
 
 ### Binary Search 
 
@@ -456,8 +446,6 @@ Dijkstra’s algorithm works when all the weights are positive. If you have nega
 
 ## Greedy Algorithms
 
-------
-
 ### NP Complete Problems
 
 NP-complete problems have no known fast solution. If you have an NP-complete problem, your best bet is to use an approximation algorithm. Greedy algorithms are easy to write and fast to run, so they make good approximation algorithms.
@@ -481,8 +469,6 @@ The search for optimal solution is done without repetition – the algorithm run
 
 
 ## Dynamic Programming
-
-------
 
 ### **Explanation**
 
