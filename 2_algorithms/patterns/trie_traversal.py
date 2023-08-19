@@ -23,22 +23,22 @@ class Trie:
         node.is_end = True
         node.counter += 1
 
-    def dfs(self, node, prefix):
-        if node.is_end:
-            self.output.append((prefix + node.char, node.counter))
-
-        for child in node.children.values():
-            self.dfs(child, prefix + node.char)
-
     def query(self, x):
-        self.output = []
-        node = self.root
+        def dfs(node, prefix):
+            if node.is_end:
+                result.append((prefix + node.char, node.counter))
+
+            for child in node.children.values():
+                dfs(child, prefix + node.char)
+
+        result = []
+        root = self.root
 
         for char in x:
-            if char in node.children:
-                node = node.children[char]
+            if char in root.children:
+                root = root.children[char]
             else:
                 return []
 
-        self.dfs(node, x[:-1])
-        return sorted(self.output, key=lambda x: x[1], reverse=True)
+        dfs(root, x[:-1])
+        return sorted(result, key=lambda x: x[1], reverse=True)

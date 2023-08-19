@@ -1,3 +1,67 @@
+++ mentioned OpenAPI / Swagger
+
+Product architecture or design
+During the product architecture or design interview, the interviewer will focus on
+building a product or API at scale that supports an end user product or service.
+You should be familiar with the areas below, but we're not looking for you to be an
+expert in all of them. You should know enough to weight design considerations
+(and understand when to consult an expert) for:
+• Storage data models
+• Scalability
+• Design patterns
+• Data ownership
+• Protocols
+• Data formats
+• Client-server design
+• Designing for long-term vs. complexity
+• Accommodating possible product changes
+
+Example product architecture or design questions
+• Design a service or product API
+• Design a chat service or a feed API
+• Design an email server
+
+------------------
+You'll be asked product oriented questions like:
+- user experience flows
+- describe the APIs in details
+- how to guard against spammers or bad actors
+- how to design API to handle repeated requests
+- still work in poor network conditions
+- does system support personalization and localization
+- optimally take advantage of browser and ISP caching
+- what other data can we cache to save on extra requests
+- what is the effect on payload size
+
+------------------
+The Product Design interview typically focuses on the more holistic parts of building a software solution and less on the back end components required.
+
+This type of design interview will spend a significant amount of time focusing on a good API. The base expectation is that you consider the product needs and design the API to cater to the specific problem you're working on. A good design will provide a way to extend the API as the product evolves, and also be self-contained such that it is clear that some production changes might require a new API to be built.
+
+You should be able to talk about enabling an efficient interaction between the product running on a client and the server. Do API calls require a single round trip between the client and the server or multiple round trips? If the product is latency sensitive, discuss caching and how that might help. What are the shortfalls of caching, for example, the client might need to store state on the device, which then needs to be secured and managed, or the server might need a good invalidation strategy in case the cache is inconsistent.
+
+If you have client-side experience you should be able to talk about how you handle user interactions like scrolling, page refreshes etc. You will also want talk about how you can improve user experience by masking latency for server interactions by tweaking the client.
+
+*It is important that the you think about how your API or product design is used. What metrics or usage experiences do you want to capture to understand how well your system is doing.
+
+-----------------
+Product Arch focusses more on the product's integration with services and how it all ties together, without emphasizing much on the core system scalability components. Let's say you're asked to build a video-only newsfeed interface, how would you build this? Would you use REST API or GraphQL for content? How would you fetch the video stream? How you THINK about the product and its users matters more here than how many server set you need to put on the backend system.
+
+-----------------
+Think APIs, data modeling, how the client and server interact, how a user may interact with it, etc. If you are currently working on a user facing product, this may be a good choice.
+https://www.twine.net/blog/13-api-design-interview-questions-and-answers/
+
+----------------
+Check some current APIs
+
+----------------
+Read books, know the best practices, know security
+
+-----------------
+
+
+
+
 Notes:
 - Gather functional requirements:
     * who are the users
