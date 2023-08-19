@@ -405,4 +405,16 @@ max_heap = [16, 14, 10, 8, 7, 9, 3, 2, 4, 1]
 
 - Whenever you need quick access to max or min.
 
+- Top Kth or Bottom Kth
+
+- Merging sorted sequences
+
+- Largest, smallest
+
+- Best, Worst
+
+- Maximum, minimum
+
+- Optimal
+
     
