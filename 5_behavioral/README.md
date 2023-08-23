@@ -14,6 +14,10 @@ You want to sound impressive but without being arrogant, to do this you must be 
 
 Stay light on details and just state the key points. When possible, try to translate it or at least explain the impact. You can always offer the interviewer the opportunity to drill in further.
 
+### Think Before
+
+Don't rush into the answer, think first and find a good story. It's ok to take a couple seconds.
+
 
 
 ## Responses
@@ -223,6 +227,26 @@ Action:
 - I began calling meetings with project managers and business users to gather functional requirements.
 
 Result: I developed a better connection with my colleagues and work became more fun.
+
+
+
+**Have you ever had to roadmap or plan a project? Describe steps you take.**
+
+Situation: A new data product service need to be launched. 
+
+Action:
+
+- Gather functional and non-functional requirements. 
+- Understand the capacity estimations and SLAs.
+- Breakdown the project - data producers/consumers, system design, software design, domain layer.
+- Identify existing company resources and contact.
+- Produce architecture and design diagrams, review with management and adjust accordingly.
+- Prioritize, build the project in stages. End to end solution first. Refined optimized solution later.
+- Allocate ownership - Agile / Project Management. 
+- Provide an SOW with roadmap/timeline and delivery dates. Agreement with business.
+- Execute and regularly review/share weekly progress to management.
+
+Result: A well implemented project with transparency and agreed upon requirements.
 
 
 
