@@ -1,3 +1,9 @@
+# EXPLANATION:
+# This code effectively uses BFS to compute the shortest distances from each cell to the nearest zero cell in the given
+# matrix. It initializes a queue with zero cells, explores neighboring cells, and updates distances accordingly,
+# ultimately producing the desired result.
+
+
 from collections import deque
 
 

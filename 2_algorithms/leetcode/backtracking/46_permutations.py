@@ -1,3 +1,9 @@
+# EXPLANATION:
+# This generates all possible permutations of the given nums list using a backtracking approach. The backtrack function
+# recursively swaps elements and explores different positions to construct permutations. By restoring the original order
+# through backtracking, it generates all valid permutations, which are collected in the permutations list.
+
+
 def permute(nums):
     def backtrack(start):
         if start == len(nums):

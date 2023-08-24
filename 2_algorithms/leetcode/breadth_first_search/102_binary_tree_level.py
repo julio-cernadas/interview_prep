@@ -1,3 +1,8 @@
+# EXPLANATION:
+# Performs a level-order traversal on a binary tree and returns the values of nodes at each level in a nested list
+# format. It uses a queue to manage nodes at each level and efficiently constructs the result using nested lists.
+
+
 from typing import List, Optional
 
 

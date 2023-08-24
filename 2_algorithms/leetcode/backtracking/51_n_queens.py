@@ -1,3 +1,10 @@
+# EXPLANATION:
+# Employs a backtracking approach to solve the N-Queens problem. The is_safe function checks if placing a queen in a
+# given position is safe from attacks by other queens. The generate_board function converts the board configuration to
+# a formatted string representation. The backtrack function iterates through rows and columns, placing queens and
+# recursively exploring valid placements. Once a valid config of queens is found, it's added to the solutions list.
+
+
 def solve_n_queens(n):
     def is_safe(board, row, col):
         for i in range(row):

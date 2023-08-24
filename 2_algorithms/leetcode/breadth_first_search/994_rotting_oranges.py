@@ -1,3 +1,9 @@
+# EXPLANATION:
+# This code simulates the process of oranges rotting in a grid and calculates the time it takes for all fresh oranges
+# to become rotten. It utilizes a queue-based BFS approach to track and process the rottening of oranges while keeping
+# track of the time taken.
+
+
 def oranges_rotting(grid):
     queue = []
     time_cnt, fresh_cnt = 0, 0

@@ -1,3 +1,9 @@
+# EXPLANATION:
+# Utilizes BFS to calculate the shortest path from the top-left corner to the bottom-right corner of a binary matrix.
+# It efficiently explores neighboring cells and tracks visited cells to find the optimal path while considering
+# obstacles and boundaries.
+
+
 def shortest_path_binary_matrix(grid):
     if grid[0][0] == 1 or grid[-1][-1] == 1:
         return -1

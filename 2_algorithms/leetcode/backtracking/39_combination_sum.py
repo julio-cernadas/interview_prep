@@ -1,3 +1,9 @@
+# EXPLANATION:
+# The code's backtracking approach effectively explores the space of possible combinations of candidates to find those
+# that sum up to the target k. This approach is only considering candidates that can contribute to valid combinations,
+# and by using recursive calls and backtracking to explore all possible paths through the combination space.
+
+
 def combination_sum(candidates, k):
     def backtrack(start, target, path):
         if target == 0:

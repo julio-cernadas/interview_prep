@@ -1,3 +1,8 @@
+# EXPLANATION:
+# Supports setting values with timestamps and retrieving values based on timestamps using a binary search approach.
+# This is useful for maintaining a time-based key-value store and efficiently retrieving historical values.
+
+
 class TimeMap:
     def __init__(self):
         self.store = {}

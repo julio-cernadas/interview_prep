@@ -1,3 +1,9 @@
+# EXPLANATION:
+# Performs a binary search in a rotated sorted array to find the index of the target value. It handles cases where one
+# half of the array is sorted, making adjustments to the search range based on comparisons with the target value. This
+# approach enables the algorithm to efficiently locate the target index or determine its absence in the array.
+
+
 def binary_search(nums, target: int) -> int:
     if not nums:
         return -1

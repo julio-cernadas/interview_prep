@@ -546,29 +546,47 @@ Support multiple languages and localized content for users:
 
 # Client Design
 
-How you handle user interactions like scrolling, page refreshes etc. You will also want talk about how you can improve user experience by masking latency for server interactions by tweaking the client.
-
 Improving user experience by masking latency for server interactions involves optimizing the perception of speed and responsiveness in your application, even when actual network and server delays are present.
 
-**1. Preemptive Actions and Feedback:** Implement actions that provide immediate visual or interactive feedback to user actions. For example, when a user clicks a button, show a loading animation or feedback indicating that the system has acknowledged the action. This reduces the perceived waiting time and keeps users engaged.
+## Preemptive Actions and Feedback
 
-**2. Caching:** Leverage client-side caching to store frequently used data or resources. This minimizes the need for repeated server requests. Consider using browser storage mechanisms like localStorage or sessionStorage to temporarily store data that can be retrieved instantly.
+Implement actions that provide immediate visual or interactive feedback to user actions. For example, when a user clicks a button, show a loading animation or feedback indicating that the system has acknowledged the action. This reduces the perceived waiting time and keeps users engaged.
 
-**3. Skeleton Screens:** Instead of showing a blank screen while waiting for content to load, use skeleton screens. These are lightweight representations of the content's layout that give users a visual indication of what's coming. This creates a perception of progress and reduces the feeling of waiting.
+## Caching
 
-**4. Progressive Loading:** Load content progressively, starting with the most crucial elements. For instance, load the main text of an article first and then gradually load images and other non-essential components. This creates a sense of continuous progress.
+Leverage client-side caching to store frequently used data or resources. This minimizes the need for repeated server requests. Consider using browser storage mechanisms like localStorage or sessionStorage to temporarily store data that can be retrieved instantly.
 
-**5. Lazy Loading:** Implement lazy loading for images, videos, and other media. Load only the visible content initially, and load additional content as the user scrolls down. This reduces initial page load times and provides a smoother experience.
+## Skeleton Screens
 
-**6. Predictive Fetching:** Anticipate user actions and start fetching required data before the user explicitly requests it. For instance, preload content when hovering over links or buttons, so the content is ready when the user clicks.
+Instead of showing a blank screen while waiting for content to load, use skeleton screens. These are lightweight representations of the content's layout that give users a visual indication of what's coming. This creates a perception of progress and reduces the feeling of waiting.
 
-**7. Minimize Round-Trips:** Reduce the number of server requests by bundling multiple requests into a single request or utilizing batch processing. Fewer round-trips mean less waiting time for the user.
+## Progressive Loading
 
-**8. PWA Techniques:** Utilize Progressive Web App (PWA) techniques such as service workers to cache assets and enable offline access. This provides a seamless experience even when the network connection is slow or unstable.
+Load content progressively, starting with the most crucial elements. For instance, load the main text of an article first and then gradually load images and other non-essential components. This creates a sense of continuous progress.
 
-**9. Visual Effects:** Incorporate subtle animations or transitions to distract users from the actual loading time. Animations can give users the feeling of continuous activity, reducing perceived waiting time.
+## Lazy Loading
 
-**10. Quality Content Loading:** Load high-priority content first, ensuring that users see meaningful content before less critical elements. This can apply to text, images, or interactive elements.
+Implement lazy loading for images, videos, and other media. Load only the visible content initially, and load additional content as the user scrolls down. This reduces initial page load times and provides a smoother experience.
+
+## Predictive Fetching
+
+Anticipate user actions and start fetching required data before the user explicitly requests it. For instance, preload content when hovering over links or buttons, so the content is ready when the user clicks.
+
+## Minimize Round-Trips
+
+Reduce the number of server requests by bundling multiple requests into a single request or utilizing batch processing. Fewer round-trips mean less waiting time for the user.
+
+## PWA Techniques
+
+Utilize Progressive Web App (PWA) techniques such as service workers to cache assets and enable offline access. This provides a seamless experience even when the network connection is slow or unstable.
+
+## Visual Effects
+
+Incorporate subtle animations or transitions to distract users from the actual loading time. Animations can give users the feeling of continuous activity, reducing perceived waiting time.
+
+## Quality Content Loading
+
+Load high-priority content first, ensuring that users see meaningful content before less critical elements. This can apply to text, images, or interactive elements.
 
 # DB Design
 
