@@ -1,3 +1,6 @@
+# BIG O:
+# O(log n)
+
 # EXPLANATION:
 # Performs a binary search in a rotated sorted array to find the index of the target value. It handles cases where one
 # half of the array is sorted, making adjustments to the search range based on comparisons with the target value. This
@@ -17,14 +20,14 @@ def binary_search(nums, target: int) -> int:
 
         # if the left half is sorted
         if nums[low] <= nums[mid]:
-            if nums[low] <= target <= nums[mid]:
+            if (target < nums[mid]) and (target >= nums[low]):
                 high = mid - 1
             else:
                 low = mid + 1
 
         # if the right half is sorted
         else:
-            if nums[mid] <= target <= nums[high]:
+            if (target > nums[mid]) and (target <= nums[high]):
                 low = mid + 1
             else:
                 high = mid - 1

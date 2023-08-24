@@ -1,3 +1,6 @@
+# BIG O:
+# O(n!)
+
 # EXPLANATION:
 # This generates all possible permutations of the given nums list using a backtracking approach. The backtrack function
 # recursively swaps elements and explores different positions to construct permutations. By restoring the original order
@@ -20,6 +23,6 @@ def permute(nums):
     return permutations
 
 
-data = [1, 2, 3]
+data = [1, 2, 3, 4]
 output = permute(data)
 print(output)

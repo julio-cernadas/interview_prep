@@ -1,3 +1,6 @@
+# BIG O:
+# O(log n)
+
 # EXPLANATION:
 # Uses binary search to locate the minimum value in a rotated sorted array. By comparing the midpoint value with the
 # value at the right end of the search range, the algorithm determines whether the minimum lies in the left or right
@@ -8,7 +11,10 @@ def find_min(nums):
     left, right = 0, len(nums) - 1
 
     while left < right:
-        mid = left + (right - left) // 2
+        mid = (left + right) // 2
+
+        if nums[left] <= nums[right]:
+            break
 
         if nums[mid] > nums[right]:
             left = mid + 1

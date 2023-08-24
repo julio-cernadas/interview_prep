@@ -20,16 +20,17 @@
 
 
 def get_perms_with_rep(string, k):
-    def backtrack(current_permutation):
-        if len(current_permutation) == k:
-            permutations.append(current_permutation)
+    def backtrack(permutation):
+        if len(permutation) == k:
+            permutations.append(permutation)
             return
+
         for char in string:
-            backtrack(current_permutation + char)
+            backtrack(permutation + char)
 
     permutations = []
     backtrack("")
     return permutations
 
 
-print(get_perms_with_rep("JPB123", 2))
+print(get_perms_with_rep("JPB123", 6))

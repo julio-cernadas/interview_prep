@@ -1,3 +1,13 @@
+# BIG O:
+# O(n)
+
+# EXPLANATION:
+# Recursively searches for the lowest common ancestor of p and q by traversing the tree. If the current node is None or
+# equal to either p or q, it returns the current node as a potential common ancestor. Otherwise, it searches for the
+# LCA in the left and right subtrees. If both subtrees contain non-None values, the current node is the LCA. If only
+# one subtree contains a non-None value, that value is propagated up the recursion stack.
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -6,21 +16,14 @@ class TreeNode:
 
 
 def lowest_common_ancestor(root, p, q):
-    # Step 1: Base case - return root if root is None or matches either p or q
     if not root or root == p or root == q:
         return root
 
-    # Step 2: Recurse on the left subtree
     left_lca = lowest_common_ancestor(root.left, p, q)
-
-    # Step 3: Recurse on the right subtree
     right_lca = lowest_common_ancestor(root.right, p, q)
-
-    # Step 4: If both left and right subtrees have a valid LCA, return the current root
     if left_lca and right_lca:
         return root
 
-    # Step 5: Return the valid LCA from either subtree
     return left_lca if left_lca else right_lca
 
 

@@ -1,3 +1,6 @@
+# BIG O:
+# O(2^n)
+
 # EXPLANATION:
 # Uses a backtracking approach to generate all subsets of the given nums list. The backtrack function starts with an
 # empty subset and systematically adds each element to the subset, generating subsets along the way. After appending
@@ -7,12 +10,10 @@
 
 def subsets(nums):
     def backtrack(start, current):
-        result.append(current[:])
+        result.append(current)
 
         for i in range(start, len(nums)):
-            current.append(nums[i])
-            backtrack(i + 1, current)
-            current.pop()
+            backtrack(i + 1, current + [nums[i]])
 
     result = []
     backtrack(0, [])

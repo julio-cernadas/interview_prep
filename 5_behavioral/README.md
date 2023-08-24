@@ -351,6 +351,12 @@ Overcommitting - sometimes I sign up for too many tasks since I'm ethusiastic fo
 
 # Questions For Them
 
+## Company
+
+- AGI, how they're adapting their products and workflows?
+
+
+
 ## Interviewer
 
 - What's your favorite part about working for XYZ?

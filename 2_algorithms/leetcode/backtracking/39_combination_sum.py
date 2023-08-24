@@ -1,3 +1,6 @@
+# BIG O:
+# O(n^k)
+
 # EXPLANATION:
 # The code's backtracking approach effectively explores the space of possible combinations of candidates to find those
 # that sum up to the target k. This approach is only considering candidates that can contribute to valid combinations,
@@ -7,14 +10,12 @@
 def combination_sum(candidates, k):
     def backtrack(start, target, path):
         if target == 0:
-            result.append(path[:])
+            result.append(path)
             return
 
         for i in range(start, len(candidates)):
             if candidates[i] <= target:
-                path.append(candidates[i])
-                backtrack(i, target - candidates[i], path)
-                path.pop()
+                backtrack(i, target - candidates[i], path + [candidates[i]])
 
     result = []
     backtrack(0, k, [])

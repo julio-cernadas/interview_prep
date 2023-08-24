@@ -1,3 +1,6 @@
+# BIG O:
+# O(n!)
+
 # EXPLANATION:
 # Employs a backtracking approach to solve the N-Queens problem. The is_safe function checks if placing a queen in a
 # given position is safe from attacks by other queens. The generate_board function converts the board configuration to

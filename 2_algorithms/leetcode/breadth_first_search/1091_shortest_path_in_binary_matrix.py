@@ -1,28 +1,32 @@
+# BIG O:
+# O(n)
+
 # EXPLANATION:
 # Utilizes BFS to calculate the shortest path from the top-left corner to the bottom-right corner of a binary matrix.
 # It efficiently explores neighboring cells and tracks visited cells to find the optimal path while considering
 # obstacles and boundaries.
 
 
-def shortest_path_binary_matrix(grid):
-    if grid[0][0] == 1 or grid[-1][-1] == 1:
+def shortest_path_binary_matrix(matrix):
+    if matrix[0][0] == 1 or matrix[-1][-1] == 1:
         return -1
 
-    n = len(grid)
-    directions = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1)]
     queue = [(0, 0, 1)]
-    visited = {(0, 0)}
-
+    neighbors = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1)]
     while queue:
         row, col, distance = queue.pop(0)
-        if (row, col) == (n - 1, n - 1):
+        if (row, col) == (len(matrix) - 1, len(matrix) - 1):
             return distance
-        for dr, dc in directions:
-            new_row, new_col = row + dr, col + dc
-            within_matrix = 0 <= new_row < n and 0 <= new_col < n
-            if within_matrix and grid[new_row][new_col] == 0 and (new_row, new_col) not in visited:
-                visited.add((new_row, new_col))
-                queue.append((new_row, new_col, distance + 1))
+
+        for n_row, n_col in neighbors:
+            n_row += row
+            n_col += col
+            is_out_of_bound = n_row < 0 or n_row >= len(matrix) or n_col < 0 or n_col >= len(matrix[0])
+            if is_out_of_bound or matrix[n_row][n_col] != 0:
+                continue
+
+            matrix[n_row][n_col] = -1
+            queue.append((n_row, n_col, distance + 1))
 
     return -1
 
