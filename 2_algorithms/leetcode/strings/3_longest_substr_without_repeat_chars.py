@@ -1,3 +1,6 @@
+# BIG O:
+# O(n)
+
 # EXPLANATION:
 # Here we use the sliding window approach. It initializes a dictionary to track the last seen index of each character
 # and maintains pointers for the current substring's start and maximum length. While iterating through the string,

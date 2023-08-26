@@ -23,3 +23,29 @@ def maxEvents(self, events: List[List[int]]) -> int:
 
         d += 1
     return res
+
+
+https://leetcode.com/problems/word-break/
+https://leetcode.com/problems/partition-equal-subset-sum/
+https://leetcode.com/problems/spiral-matrix/
+https://leetcode.com/problems/binary-tree-right-side-view/
+https://leetcode.com/problems/unique-paths/
+https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+https://leetcode.com/problems/container-with-most-water/
+https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+https://leetcode.com/problems/find-all-anagrams-in-a-string/
+https://leetcode.com/problems/minimum-height-trees/
+https://leetcode.com/problems/task-scheduler/
+https://leetcode.com/problems/lru-cache/
+https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+https://leetcode.com/problems/daily-temperatures/
+https://leetcode.com/problems/house-robber/
+https://leetcode.com/problems/gas-station/
+https://leetcode.com/problems/next-permutation/
+https://leetcode.com/problems/group-anagrams/
+https://leetcode.com/problems/design-add-and-search-words-data-structure/
+https://leetcode.com/problems/pacific-atlantic-water-flow/
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+https://leetcode.com/problems/find-the-duplicate-number/
+https://leetcode.com/problems/top-k-frequent-words/
+https://leetcode.com/problems/longest-increasing-subsequence/

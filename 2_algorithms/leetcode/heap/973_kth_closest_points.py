@@ -1,3 +1,11 @@
+# BIG O:
+# O(n + k * log n)
+
+# EXPLANATION:
+# Uses a min-heap to efficiently find the k closest points to the origin from a list of points, based on their
+# squared Euclidean distances.
+
+
 import heapq
 
 
@@ -5,14 +13,13 @@ def k_closest_points(points, k):
     min_heap = []
     for x, y in points:
         dist = (x**2) + (y**2)
-        min_heap.append([dist, x, y])
-
+        min_heap.append((dist, x, y))
     heapq.heapify(min_heap)
+
     res = []
-    while k > 0:
+    for _ in range(k):
         dist, x, y = heapq.heappop(min_heap)
         res.append([x, y])
-        k -= 1
 
     return res
 

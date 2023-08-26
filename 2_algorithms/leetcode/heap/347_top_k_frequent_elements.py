@@ -1,28 +1,26 @@
+# BIG O:
+# O(n * log n)
+
+# EXPLANATION:
+# Uses a frequency dictionary and a min-heap to efficiently find the k most frequent elements in a list.
+
 import heapq
+from collections import defaultdict
 
 
 def top_k_frequent_elements(nums, k):
-    # Step 1: Create a dictionary to store the frequency of each number
-    freq_dict = {}
+    freq_dict = defaultdict(int)
     for num in nums:
-        freq_dict[num] = freq_dict.get(num, 0) + 1
+        freq_dict[num] += 1
 
-    # Step 2: Create a min-heap to store the k most frequent elements
-    min_heap = []
+    max_heap = [(-freq, num) for num, freq in freq_dict.items()]
+    heapq.heapify(max_heap)
 
-    # Step 3: Iterate through the items in the frequency dictionary
-    for num, freq in freq_dict.items():
-        # Step 4: Push the current element and its frequency as a tuple into the min-heap
-        heapq.heappush(min_heap, (freq, num))
+    result = []
+    for _ in range(k):
+        freq, num = heapq.heappop(max_heap)
+        result.append(num)
 
-        # Step 5: If the size of the min-heap exceeds k, remove the smallest element
-        if len(min_heap) > k:
-            heapq.heappop(min_heap)
-
-    # Step 6: Extract the k most frequent elements from the min-heap
-    result = [num for freq, num in min_heap]
-
-    # Step 7: Return the result
     return result
 
 

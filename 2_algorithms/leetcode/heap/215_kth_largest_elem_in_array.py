@@ -1,19 +1,21 @@
+# BIG O:
+# O(k * log n)
+
+# EXPLANATION:
+# Finds the kth largest element in a list using a max-heap, we pop k times until we get the k-th largest element.
+
+
 import heapq
 
 
 def find_kth_largest(nums, k):
-    # Convert the input list into a min-heap with k elements
-    min_heap = nums[:k]
-    heapq.heapify(min_heap)  # Convert the list into a heap in O(k) time
+    max_heap = [-num for num in nums]
+    heapq.heapify(max_heap)
 
-    # Traverse the remaining elements in the input list
-    for num in nums[k:]:
-        if num > min_heap[0]:
-            heapq.heappop(min_heap)  # Remove the smallest element
-            heapq.heappush(min_heap, num)  # Push the larger element into the heap
+    for _ in range(k - 1):
+        heapq.heappop(max_heap)
 
-    # The root of the min-heap will be the kth largest element
-    return min_heap[0]
+    return -max_heap[0]
 
 
 data = [3, 2, 1, 5, 6, 4]

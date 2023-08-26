@@ -46,7 +46,7 @@ Notes:
     * Sharding - the process of scaling the system horizontally by breaking up the system into smaller fragments called Shards.
     * Polling, SSE, Websockets
     * Pull Model vs Push Model
-    * Queus & Pub-Sub (Message Brokers, Producers, Consumers)
+    * Queues & Pub-Sub (Message Brokers, Producers, Consumers)
     * Change Data
     * NoSQL - Cassandra
     * Aggregation Services
